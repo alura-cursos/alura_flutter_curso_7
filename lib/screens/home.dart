@@ -6,8 +6,7 @@ import 'package:estilizacao_componentes/data/bank_http.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({required this.api,Key? key}) : super(key: key);
-  final Future<String> api;
+  const Home({Key? key}) : super(key: key);
 
 
   @override
@@ -15,11 +14,11 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: <Widget>[
-            Header(api: api), // cuidado com o const
-            const RecentActivity(),
-            const ActionsSection(),
-            const PointsExchange(),
+          children: const <Widget>[
+            Header(), // cuidado com o const
+            RecentActivity(),
+            ActionsSection(),
+            PointsExchange(),
           ],
         ),
       ),
