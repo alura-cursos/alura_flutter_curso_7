@@ -22,12 +22,27 @@ void main() {
     ));
     expect(find.byType(LinearProgressIndicator), findsOneWidget);
   });
-  testWidgets('finds a AccountStatuus', (tester) async {
+  testWidgets('finds a AccountStatus', (tester) async {
     await tester.pumpWidget(MaterialApp(
       home: BankInherited(
         child: Home(),
       ),
     ));
     expect(find.byKey(Key('testKey')), findsOneWidget);
+  });
+  testWidgets('finds 5 BoxCards ', (tester) async {
+    await tester.pumpWidget(MaterialApp(
+      home: BankInherited(
+        child: Home(),
+      ),
+    ));
+    expect(find.byWidgetPredicate((widget) {
+      if(widget is BoxCard){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }), findsNWidgets(5));
   });
 }
