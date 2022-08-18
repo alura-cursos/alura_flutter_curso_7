@@ -37,12 +37,23 @@ void main() {
       ),
     ));
     expect(find.byWidgetPredicate((widget) {
-      if(widget is BoxCard){
+      if (widget is BoxCard) {
         return true;
-      }
-      else{
+      } else {
         return false;
       }
     }), findsNWidgets(5));
+  });
+  testWidgets('When tap Deposit should upload earned in 10', (tester) async{
+    await tester.pumpWidget(MaterialApp(
+      home: BankInherited(
+        child: Home(),
+      ),
+    ));
+    await tester.tap(find.text('Deposit'));
+    await tester.tap(find.text('Earned'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('\$10.0'), findsOneWidget);
   });
 }
