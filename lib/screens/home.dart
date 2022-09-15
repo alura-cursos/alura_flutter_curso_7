@@ -6,19 +6,19 @@ import 'package:estilizacao_componentes/data/bank_http.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+  const Home({required this.api, Key? key}) : super(key: key);
+  final Future<String> api;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const <Widget>[
-            Header(), // cuidado com o const
-            RecentActivity(),
-            ActionsSection(),
-            PointsExchange(),
+          children: <Widget>[
+            Header(api: this.api,), // cuidado com o const
+            const RecentActivity(),
+            const ActionsSection(),
+            const PointsExchange(),
           ],
         ),
       ),

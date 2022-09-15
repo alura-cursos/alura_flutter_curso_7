@@ -3,7 +3,8 @@ import 'package:estilizacao_componentes/data/bank_inherited.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatefulWidget {
-  const Header({Key? key}) : super(key: key);
+  const Header({required this.api, Key? key}) : super(key: key);
+  final Future<String> api;
 
   @override
   State<Header> createState() => _HeaderState();
@@ -59,7 +60,7 @@ class _HeaderState extends State<Header> {
                     ],
                   ),
                   FutureBuilder(
-                      future: BankHttp().dolarToReal(),
+                      future: widget.api,
                       builder: (context, snapshot) {
                         switch (snapshot.connectionState) {
                           case ConnectionState.none:
