@@ -3,11 +3,17 @@
 # Flutter: Testes de Unidade, de Widgets e Mocks
 
 Esse curso de Flutter vai te ensinar a: 
--> Verificar um código desconhecido 
+
+-> Verificar um código desconhecido
+
 -> Criar mecanismos de Qualidade para seu produto
+
 -> Formular testes
+
 -> Utilizar métodos de busca de Widget sofisticados
+
 -> Criar confiabilidade ao seu código.
+
 
 ## 🔨 Projeto: AluraBank
 
